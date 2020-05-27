@@ -1,0 +1,41 @@
+- Tem que desenvolver o projeto dentro da mesma virtualenv.
+- para criar uma nova virtualenv chamada 'env'':
+    python3 -m venv env
+- para ativar a virtualenv, tem que achar o arquivo activate no projeto, nesse caso estava no caminho:
+ /Users/Cristian/env/bin/activate
+- Depois é só rodar o comando:  (    source <caminho>   )
+- Com a virtualenv ativada no terminal do Pycharm fica facil de instalar os pacotes via pip
+- Mais informações sobre vienv:
+    https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
+
+Para fazer o DEPLOY do projeto:
+- criar conta no Heroku
+- instalar o Heroku CLI (   brew tap heroku/brew && brew install heroku   )
+- No terminal logar no Heroku  (   heroku login   )
+- Clicar no link e efetuar login pelo navegador. Após, voltar ao terminal. Irá aparecer:
+    Logging in... done
+    Logged in as eusouocristian@hotmail.com
+- Ir no Dashboard do site do Heroku (nos tres risquinhos de menu ao lado da foto do perfil) e criar uma nova aplicação.
+- Verificar status dos arquivos do git (atualizar branch). Se o diretório já estiver no git:
+    git status
+    git add -A
+    git commit -m 'mensagem do commit'
+    git push
+    mais informações: https://rogerdudler.github.io/git-guide/index.pt_BR.html
+- Fazer o link do app do Heroku com o repositório Git:
+    heroku git:remote -a <nome_do_app>
+    por exemplo:   heroku git:remote -a gerenciador-do-cristian
+- Instalar pacote django-heroku ( pip install django-heroku )
+    No meu caso, estava dando um erro, instalei via pip, e depois instalei o heroku também. (pip install heroku)
+- Instalar o pacote gunicorn
+- Criar o arquivo Procfile na raiz;
+- Criar o arquivo requirements.txt
+    pip freeze > requirements.txt
+    Se não der certo, criar manualmente requirements.txt, rodar ( pip freeze ) e copiar o conteudo no arquivo txt
+- Atualizar os arquivos no git e fazer upload para o Heroku
+    git add .
+    git commit -m 'Deploy da aplicacao'
+    git push heroku master
+
+
+
