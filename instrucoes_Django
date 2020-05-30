@@ -14,10 +14,43 @@ INICIAR PROJETO:
     models.py
     tests.py
     views.py
+- Cadastrar cada novo app criado no arquivo apps.py
 
-- Funções de cada arquivo:
-    models: cadastro da tabela que deverá ser criada pelo Django no banco de dados
+- Estrutura do Django:
     views: inicialmente o projeto cria um arquivo views.py, mas depois foi criada uma pasta para todas views.
-            Os códigos python dos processos da aplicação ficam no views.py.
+          Os códigos python dos processos da aplicação ficam no views.py.
+          A pasta entidade apenas registra uma classe Tarefa. No arquivo tarefa_views, uma novo arquivo é criado
+          com o nome tarefa_nova para armazenar uma Tarefa para ser escrita ou alterada no bd.
+          O arquivo forms.py registra uma classe de formulário para ser usada no arquivo tarefa_views
+    urls: As urls (caminhos) de navegação da aplicação são registradas no arquivo urls.py.
+          Cada tarefa recebe um caminho
+    models: cadastro da tabela que deverá ser criada pelo Django no banco de dados
+    services: Faz as ações backend (escrita e leitura) do banco de dados
+
+    settings.py:
+        Parâmetros que foram alterados:
+            import django-heroku
+            django_heroku.settings(locals())
+            STATIC_URL = '/static/'          (caminho do diretorio static com os arquivos css)
+            LOGIN_URL = 'logar_usuario'
+            LANGUAGE_CODE = 'pt-br'
+            DATABASES = {
+                     'default': {
+                     'ENGINE': 'django.db.backends.mysql',
+                     'NAME': 'gerenciador_tarefas',
+                     'USER': 'root',
+                     'PASSWORD': 'canuKs01',
+                     'HOST': 'localhost',
+                     'PORT': '3306',
+                        }
+                        }
+            WSGI_APPLICATION = 'gerenciador_tarefas.wsgi.application'
+            ROOT_URLCONF = 'gerenciador_tarefas.urls'
+            INSTALLED_APPS         (acrescentado os apps criados)
+
+
+
+
+
 
 
