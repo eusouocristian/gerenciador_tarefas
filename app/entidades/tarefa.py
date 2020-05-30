@@ -1,6 +1,4 @@
 # boa pratica criar variaveis privadas (sem possibilidade de acesso atraves da classe, usando '__' antes do nome
-
-
 class Tarefa():
     def __init__(self, titulo, descricao, data_expiracao, prioridade, usuario):
         self.__titulo = titulo

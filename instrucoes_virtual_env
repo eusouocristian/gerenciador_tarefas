@@ -1,0 +1,9 @@
+- Tem que desenvolver o projeto dentro da mesma virtualenv.
+- para criar uma nova virtualenv chamada 'env'':
+    python3 -m venv env
+- para ativar a virtualenv, tem que achar o arquivo activate no projeto, nesse caso estava no caminho:
+ /Users/Cristian/env/bin/activate
+- Depois é só rodar o comando:  (    source <caminho>   )
+- Com a virtualenv ativada no terminal do Pycharm fica facil de instalar os pacotes via pip
+- Mais informações sobre vienv:
+    https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/

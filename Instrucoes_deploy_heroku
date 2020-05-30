@@ -1,13 +1,3 @@
-- Tem que desenvolver o projeto dentro da mesma virtualenv.
-- para criar uma nova virtualenv chamada 'env'':
-    python3 -m venv env
-- para ativar a virtualenv, tem que achar o arquivo activate no projeto, nesse caso estava no caminho:
- /Users/Cristian/env/bin/activate
-- Depois é só rodar o comando:  (    source <caminho>   )
-- Com a virtualenv ativada no terminal do Pycharm fica facil de instalar os pacotes via pip
-- Mais informações sobre vienv:
-    https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
-
 Para fazer o DEPLOY do projeto:
 - criar conta no Heroku
 - instalar o Heroku CLI (   brew tap heroku/brew && brew install heroku   )
@@ -38,6 +28,12 @@ Para fazer o DEPLOY do projeto:
     git commit -m 'Deploy da aplicacao'
     git push heroku master
 - Executar comando ( heroku run python manage.py migrate ) para criar o banco de dados
+
+- Para atualizar a aplicação no servidor do Heroku:
+    git add .
+    git commit -m 'Deploy da aplicacao'
+    git push heroku master
+
 
 
 

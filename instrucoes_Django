@@ -1,0 +1,23 @@
+INICIAR PROJETO:
+- Iniciar uma virtualenv, activate (ver instrucoes de venv)
+- Com o terminal iniciado na virtual env, e na raiz da pasta criada para o projeto,
+    django-admin startproject <nome_do_projeto>
+- Na pasta com o nome do projeto serão criados os arquivos: __init__.py, settings.py, urls.py, wsgi.py,
+  e na raiz da pasta que foi criada anteriormente, será criado o arquivo manage.py
+- Para criar uma aplicação, entrar no terminal na pasta onde está o manage.py
+    python manage.py startapp <nome_do_app>
+- Será criada a pasta com o nome do app. Na pasta do app serão criados:
+    migrations (pasta)
+    __init__.py
+    admin.py
+    apps.py
+    models.py
+    tests.py
+    views.py
+
+- Funções de cada arquivo:
+    models: cadastro da tabela que deverá ser criada pelo Django no banco de dados
+    views: inicialmente o projeto cria um arquivo views.py, mas depois foi criada uma pasta para todas views.
+            Os códigos python dos processos da aplicação ficam no views.py.
+
+
