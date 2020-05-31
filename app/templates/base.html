@@ -10,30 +10,44 @@
 
 <body data-spy="scroll" data-target="spy-scroll-id">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <div class="container">
-        <a class="navbar-brand"><img src=" {% static 'app/images/pic.jpg' %}" class="rounded-circle h-50 w-50"></a>
-        <span class="navbar-text mr-auto">Gerenciador de Tarefas</span>
 
+    <div class="container ml-1">
+
+        <a class="navbar-brand mr-n3"><img src=" {% static 'app/images/pic.jpg' %}" class="rounded-circle h-50 w-50"></a>
+            <h4 class="badge badge-dark text-wrap font-italic mt-2 mr-auto ml-n5" style="width: 8rem;">
+                Gerenciador de Tarefas
+            </h4 >
+
+        {% if user.is_authenticated %}
         <button class="navbar-toggler" data-toggle="collapse" data-target="#NavbarMenu">
             <span class="navbar-toggler-icon">
             </span>
         </button>
 
-        {% if user.is_authenticated %}
-        <div class="collapse navbar-collapse" id="NavbarMenu">
+        <div class="collapse navbar-collapse mr-4" id="NavbarMenu">
+
             <ul class="navbar-nav mr-auto" >
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'listar_tarefas' %}">Listar Tarefas</a>
+                    {% if caminho == '/listar_tarefas/' %}
+                    <a class="nav-link px-4 active" href="{% url 'listar_tarefas' %}">Listar Tarefas</a>
+                    {% else %}
+                    <a class="nav-link px-4" href="{% url 'listar_tarefas' %}">Listar Tarefas</a>
+                    {% endif %}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cadastrar_tarefa' %}">Cadastrar Tarefas</a>
+                    {% if caminho == '/cadastrar_tarefa/' %}
+                    <a class="nav-link pr-4 active" href="{% url 'cadastrar_tarefa' %}">Cadastrar Tarefas</a>
+                    {% else %}
+                    <a class="nav-link pr-4" href="{% url 'cadastrar_tarefa' %}">Cadastrar Tarefas</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item-mr-4">
+                <a class="nav-link" href="{% url 'deslogar_usuario' %}">Sair</a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
-                <a class="nav-link" href="{% url 'deslogar_usuario' %}">Sair</a>
-            </ul>
-        </div>
+
         {% endif %}
+        </div>
     </div>
 </nav>
 
