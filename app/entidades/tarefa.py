@@ -1,4 +1,5 @@
 # boa pratica criar variaveis privadas (sem possibilidade de acesso atraves da classe, usando '__' antes do nome
+# Esse arquivo cria a classe Tarefa para ser usada ao lonfgo do projeto com suas propriedades
 class Tarefa:
     def __init__(self, titulo, descricao, data_expiracao, prioridade, usuario):
         self.__titulo = titulo
@@ -10,7 +11,6 @@ class Tarefa:
     @property
     def titulo(self):
         return self.__titulo
-
     @titulo.setter
     def titulo(self, titulo):
         self.titulo = titulo
@@ -18,7 +18,6 @@ class Tarefa:
     @property
     def descricao(self):
         return self.__descricao
-
     @descricao.setter
     def descricao(self, descricao):
         self.descricao = descricao
@@ -26,7 +25,6 @@ class Tarefa:
     @property
     def data_expiracao(self):
         return self.__data_expiracao
-
     @data_expiracao.setter
     def data_expiracao(self, data_expiracao):
         self.data_expiracao = data_expiracao
@@ -34,7 +32,6 @@ class Tarefa:
     @property
     def usuario(self):
         return self.__usuario
-
     @usuario.setter
     def usuario(self, usuario):
         self.usuario = usuario
@@ -42,7 +39,6 @@ class Tarefa:
     @property
     def prioridade(self):
         return self.__prioridade
-
     @prioridade.setter
     def prioridade(self, prioridade):
         self.prioridade = prioridade

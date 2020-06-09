@@ -1,32 +1,38 @@
-{% extends 'base.html' %}
+{% extends 'base_new.html' %}
 
 {% block conteudo %}
-<h1>Listagem de todas as tarefas</h1>
-<ol>
+
+<h1 class="titulo">Listagem de todas as tarefas</h1>
+<ol class="lista_tarefas">
 {% for item in tarefas %}
-    <li> Titulo: {{ item.titulo }} | Descrição: {{ item.descricao }}</li>
+    <li>
+        <p>Titulo: {{ item.titulo }}</p>
+        <p>Descrição: {{ item.descricao }}</p>
+    </li>
 {% endfor %}
 </ol>
 
-<h1>Tarefas por prioridade</h1>
+<!-- <div class="wrapper">
+    <div class="card">Um</div>
+    <div class="card">Dois</div>
+    <div class="card">Tres</div>
+</div> -->
 
 {% for item in tarefas %}
-<div class="mb-3">
-    <div class="card-header">
-        {{ item.get_prioridade_display }}
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">{{ item.titulo }}</h5>
-        <p class="card-text">{{ item.descricao }}</p>
+<div class="wrapper">
+    <div class="card">
+        <h1 class="prioridade">{{ item.get_prioridade_display }}</h1>
+        <p>Título: {{ item.titulo }}</p>
+        <p>Descrição: {{ item.descricao }}</p>
         <hr>
-        <a href="{% url 'editar_tarefa' item.id %}">Editar</a>
-        <a href="{% url 'remover_tarefa' item.id %}">Remover</a>
+        <a style="color: black;" href="{% url 'editar_tarefa' item.id %}">Editar</a>
+        <a style="color: black;" href="{% url 'remover_tarefa' item.id %}">Remover</a>
     </div>
 </div>
 {% endfor %}
 
-<a href="{% url 'cadastrar_tarefa' %}">
-    <input type="button" class="btn btn-outline-primary mb-3" value="Cadastrar Nova Tarefa">
+<a class="botao" href="{% url 'cadastrar_tarefa' %}">
+    <input type="button" value="Cadastrar Nova Tarefa">
 </a>
 
 
